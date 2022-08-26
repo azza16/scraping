@@ -1,0 +1,34 @@
+{
+    "spider": "page",
+    "name": "kathimerini",
+    "startUrl": "https://www.kathimerini.com.cy",
+    "sections": [
+        {"key": "politiki", "value": "/gr/politiki"},
+        {"key": "kypros", "value": "/gr/kypros"},
+        {"key": "oikonomiki", "value": "/gr/oikonomiki"},
+        {"key": "ellada", "value": "/gr/ellada"},
+        {"key": "kosmos", "value": "/gr/kosmos"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "#artlist article.item-box h3.art-title a",
+    "isLinkSelectorRelative": true,
+    "nextPage": {"suffix": "?pagenum=", "initialValue": 0, "increment": 1},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.page-head *::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "time.art-date::text",
+            "multiple": false
+        },
+        {
+            "key": "body",
+            "value": "div.ed_body p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

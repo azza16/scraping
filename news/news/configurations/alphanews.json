@@ -1,0 +1,35 @@
+{
+    "spider": "page",
+    "name": "alphanews",
+    "startUrl": "https://www.alphanews.live",
+    "sections": [
+        {"key": "politics", "value": "/politics"},
+        {"key": "cyprus", "value": "/cyprus"},
+        {"key": "greece", "value": "/greece"},
+        {"key": "international", "value": "/international"},
+        {"key": "economy", "value": "/economy"},
+        {"key": "health", "value": "/health"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "#block-pnoblockssubfeed h3.sf-title a",
+    "nextPage": {"suffix": "?page=", "initialValue": 0, "increment": 1},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1 span.field--name-title::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "meta[property='og:updated_time']::attr(content)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": "div.paragraph--type--text p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

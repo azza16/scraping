@@ -1,0 +1,30 @@
+{
+    "spider": "page",
+    "name": "riknews",
+    "startUrl": "https://riknews.com.cy/categories",
+    "sections": [
+        {"key": "politiki", "value": "/politiki"}
+    ],
+    "nextPage": {"suffix": "?page=", "initialValue": 1, "increment": 1},
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.article-category-grid article a",
+    "isLinkSelectorRelative": true,
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.single-article__title *::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "p.single-article__date::text",
+            "multiple": false
+        },
+        {
+            "key": "body",
+            "value": "div.single-article__content p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

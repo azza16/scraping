@@ -1,0 +1,34 @@
+{
+    "spider": "page",
+    "name": "reporter",
+    "startUrl": "https://www.reporter.com.cy",
+    "sections": [
+        {"key": "politics", "value": "/politics"},
+        {"key": "local-news", "value": "/local-news"},
+        {"key": "proedrikes-2023", "value": "/proedrikes-2023"},
+        {"key": "greece", "value": "/greece"},
+        {"key": "international", "value": "/international"}
+    ],
+    "nextPage": {"suffix": "?kw=&author=&p=", "initialValue": 1, "increment": 1},
+    "numberOfPages": 1,
+    "articleLinkSelector": "h3.article-headline a",
+    "selectors": [
+        {
+            "key": "title",
+            "value": "div.article-headline h1::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "div.article-headline span.date::text",
+            "multiple": false,
+            "dateFormat": "%d/%m/%Y %H:%M"
+        },
+        {
+            "key": "body",
+            "value": "div.content p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

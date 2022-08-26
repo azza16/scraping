@@ -1,0 +1,30 @@
+{
+    "spider": "brief",
+    "name": "offsite",
+    "startUrl": "https://www.offsite.com.cy",
+    "sections": [
+        {"key": "politiki", "value": "/eidiseis/politiki"}
+    ],
+    "numberOfPages": 2,
+    "articleLinkSelector": ".listing-article-title h3 a",
+    "loadMoreSelector": "a[title='Go to next page']",
+    "selectors": [
+        {
+            "key": "title",
+            "value": "div[role='heading'] h1 *::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "meta[property='og:updated_time']::attr(content)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": ".field--type-text-long *::text, .field--type-string-long *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

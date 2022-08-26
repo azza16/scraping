@@ -1,0 +1,32 @@
+{
+    "spider": "page",
+    "name": "sigmalive",
+    "startUrl": "https://www.sigmalive.com/news",
+    "sections": [
+        {"key": "politics", "value": "/politics"},
+        {"key": "local", "value": "/local"},
+        {"key": "oikonomia", "value": "/oikonomia"},
+        {"key": "kypriako", "value": "/kypriako"},
+        {"key": "energia", "value": "/energia"},
+        {"key": "greece", "value": "/greece"},
+        {"key": "international", "value": "/international"},
+        {"key": "dimosia-igeia", "value": "/dimosia-igeia"},
+        {"key": "environment", "value": "/environment"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.article--img a",
+    "nextPage": {"suffix": "/page/", "initialValue": 0, "increment": 12},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1[itemprop='name']::text",
+            "multiple": false
+        },
+        {
+            "key": "body",
+            "value": "div.article--body p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

@@ -1,0 +1,32 @@
+{
+    "spider": "page",
+    "name": "cyprusmail",
+    "startUrl": "https://cyprus-mail.com/category",
+    "sections": [
+        {"key": "cyprus", "value": "/cyprus"},
+        {"key": "world", "value": "/world"},
+        {"key": "health", "value": "/health"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.penci-archive__list_posts h2.entry-title a",
+    "nextPage": {"suffix": "/page/", "initialValue": 1, "increment": 1},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.entry-title::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "time.entry-date::attr(datetime)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": "div.entry-content p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

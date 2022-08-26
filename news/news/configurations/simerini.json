@@ -1,0 +1,31 @@
+{
+    "spider": "page",
+    "name": "simerini",
+    "startUrl": "https://simerini.sigmalive.com",
+    "sections": [
+        {"key": "politics", "value": "/politics"}
+    ],
+    "nextPage": {"suffix": "?page=", "initialValue": 1, "increment": 1},
+    "numberOfPages": 1,
+    "articleLinkSelector": "article a",
+    "articleLinkFilter": "/article/\\d{4}/\\d{1,2}/\\d{1,2}",
+    "isLinkSelectorRelative": true,
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.single-article-title *::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "p.single-article-date::text",
+            "multiple": false
+        },
+        {
+            "key": "body",
+            "value": "div.single-article-main p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

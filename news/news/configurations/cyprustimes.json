@@ -1,0 +1,34 @@
+{
+    "spider": "brief",
+    "name": "cyprustimes",
+    "startUrl": "https://cyprustimes.com",
+    "sections": [
+        {"key": "politiki", "value": "/category/politiki", "linkFilter": "https://cyprustimes.com/politiki/.+$"},
+        {"key": "koinonia", "value": "/category/koinonia", "linkFilter": "https://cyprustimes.com/koinonia/.+$"},
+        {"key": "ellada", "value": "/category/ellada", "linkFilter": "https://cyprustimes.com/ellada/.+$"},
+        {"key": "kosmos", "value": "/category/kosmos", "linkFilter": "https://cyprustimes.com/kosmos/.+$"},
+        {"key": "parapolitika", "value": "/category/parapolitika", "linkFilter": "https://cyprustimes.com/parapolitika/.+$"}
+    ],
+    "numberOfPages": 2,
+    "articleLinkSelector": "h3.td-module-title a",
+    "loadMoreSelector": "a.td-ajax-next-page",
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.tdb-title-text::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "time.entry-date::attr(datetime)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": ".text-article-unique p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

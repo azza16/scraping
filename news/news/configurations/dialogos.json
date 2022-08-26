@@ -1,0 +1,30 @@
+{
+    "spider": "page",
+    "name": "dialogos",
+    "startUrl": "https://dialogos.com.cy/category/eidhseis/local",
+    "sections": [
+        {"key": "politiki", "value": "/politiki"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.td-ss-main-content h3.entry-title a",
+    "nextPage": {"suffix": "/page/", "initialValue": 1, "increment": 1},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.entry-title::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "time.entry-date::attr(datetime)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": "div.td-post-content p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

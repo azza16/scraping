@@ -1,0 +1,35 @@
+{
+    "spider": "page",
+    "name": "philenews",
+    "startUrl": "https://philenews.com/eidiseis",
+    "sections": [
+        {"key": "politiki", "value": "/politiki"},
+        {"key": "topika", "value": "/topika"},
+        {"key": "paraskinio", "value": "/paraskinio"},
+        {"key": "ellada", "value": "/ellada"},
+        {"key": "kosmos", "value": "/kosmos"},
+        {"key": "proedrikes_ekloges2023", "value": "/proedrikes_ekloges2023"}
+    ],
+    "removeW": true,
+    "nextPage": {"suffix": "?c=0&p=", "initialValue": 1, "increment": 1},
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.content-list div.text-headline a",
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.article-headline::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "div.date *::text",
+            "multiple": false
+        },
+        {
+            "key": "body",
+            "value": "div[itemprop='articleBody'] p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

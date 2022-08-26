@@ -1,0 +1,35 @@
+{
+    "spider": "page",
+    "name": "tothemaonline",
+    "startUrl": "https://www.tothemaonline.com",
+    "sections": [
+        {"key": "politiki", "value": "/Category/politiki"},
+        {"key": "proedrikes-ekloges-2023", "value": "/Category/proedrikes-ekloges-2023"},
+        {"key": "koinonia", "value": "/Category/koinonia"},
+        {"key": "ellada", "value": "/Category/ellada"},
+        {"key": "diethni", "value": "/Category/diethni"}
+    ],
+    "nextPage": {"suffix": "?s=&p=", "initialValue": 1, "increment": 1},
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.cat_content div.cat_article_wrap a",
+    "isLinkSelectorRelative": true,
+    "selectors": [
+        {
+            "key": "title",
+            "value": "div.single_title h1 *::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "div.single_date::text",
+            "multiple": false,
+            "dateFormat": "%d.%m.%Y"
+        },
+        {
+            "key": "body",
+            "value": "div.single_user_content p *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

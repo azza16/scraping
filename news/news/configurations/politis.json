@@ -1,0 +1,34 @@
+{
+    "spider": "page",
+    "name": "politis",
+    "startUrl": "https://politis.com.cy/category/politis-news",
+    "sections": [
+        {"key": "politiki", "value": "/politiki"},
+        {"key": "diethni", "value": "/diethni"},
+        {"key": "ellada", "value": "/ellada"},
+        {"key": "kypros", "value": "/kypros"},
+        {"key": "oikonomia", "value": "/oikonomia"}
+    ],
+    "numberOfPages": 1,
+    "articleLinkSelector": "div.post-text-category-page a",
+    "nextPage": {"suffix": "/page/", "initialValue": 1, "increment": 1},
+    "selectors": [
+        {
+            "key": "title",
+            "value": "h1.post-single-title::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "meta[property='article:published_time']::attr(content)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": "div.code-block-3+ p::text, p.text-paragraph::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}

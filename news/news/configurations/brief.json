@@ -1,0 +1,34 @@
+{
+    "spider": "page",
+    "name": "brief",
+    "startUrl": "https://www.brief.com.cy",
+    "sections": [
+        {"key": "politike", "value": "/politike"},
+        {"key": "diethne", "value": "/diethne"},
+        {"key": "oikonomia", "value": "/oikonomia"},
+        {"key": "energeia", "value": "/energeia"}
+    ],
+    "numberOfPages": 1,
+    "nextPage": {"suffix": "?page=", "initialValue": 0, "increment": 1},
+    "articleLinkSelector": "div.listing-article-title a",
+    "isLinkSelectorRelative": true,
+    "selectors": [
+        {
+            "key": "title",
+            "value": "div.first-container h1::text",
+            "multiple": false
+        },
+        {
+            "key": "date",
+            "value": "meta[property='og:updated_time']::attr(content)",
+            "multiple": false,
+            "dateFormat": "parse"
+        },
+        {
+            "key": "body",
+            "value": "div.content *::text",
+            "multiple": true
+        }
+    ],
+    "duplicateKey": "url"
+}
